@@ -2,8 +2,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.use('user', (req, res, next) => {
-  return res.sendFile(path.join(__dirname, '/views/forbidden.html'));
+app.use('user', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/forbidden.html'));
 });
 app.use((req, res, next) => {
   res.show = (name) => {
